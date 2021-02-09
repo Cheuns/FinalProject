@@ -24,12 +24,12 @@ class Seasons
     private $animes;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $Season;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="integer")
      */
     private $seasondate;
 
@@ -50,24 +50,24 @@ class Seasons
         return $this;
     }
 
-    public function getSeason(): ?int
+    public function getSeason(): ?string
     {
         return $this->Season;
     }
 
-    public function setSeason(int $Season): self
+    public function setSeason(string $Season): self
     {
         $this->Season = $Season;
 
         return $this;
     }
 
-    public function getSeasondate(): ?\DateTimeInterface
+    public function getSeasondate(): ?int
     {
         return $this->seasondate;
     }
 
-    public function setSeasondate(\DateTimeInterface $seasondate): self
+    public function setSeasondate(int $seasondate): self
     {
         $this->seasondate = $seasondate;
 
