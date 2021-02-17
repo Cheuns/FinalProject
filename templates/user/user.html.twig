@@ -1,0 +1,16 @@
+{# templates/user/user.html.twig #}
+{% extends 'base.html.twig'%}
+
+{% block body %}
+    <p>Bienvenue sur ton profil {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a></p>
+
+    <p>Tu souhaites ajouter ou supprimer des oeuvres à ton profil ?</p>
+
+    <h1>Voici la liste de toutes nos oeuvres :</h1> 
+    {% for item in works %}
+            <li>{{ item.title }}</li>
+            <button class="btn btn-lg btn-primary" type="submit">Ajouter</button>
+            <button class="btn btn-lg btn-primary" type="delete">Supprimer</button>
+    {% endfor %}
+
+{% endblock %}

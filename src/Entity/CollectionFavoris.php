@@ -20,7 +20,7 @@ class CollectionFavoris
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="collectionFavoris")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="collectionFavoris")
      */
     private $user;
 

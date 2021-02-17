@@ -20,10 +20,10 @@ class Animes
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=works::class, inversedBy="animes")
+     * @ORM\ManyToOne(targetEntity=Works::class, inversedBy="animes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $works;
+    private $Works;
 
     /**
      * @ORM\Column(type="string", length=255)

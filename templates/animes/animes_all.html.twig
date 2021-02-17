@@ -1,0 +1,6 @@
+{# templates/animes/animes_all.html.twig #}
+<h1>Voici la liste de tous les animes : 
+    {% for item in animes %}
+            <li>{{ item.title }}</li>
+    {% endfor %}
+</h1>

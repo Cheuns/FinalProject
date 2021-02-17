@@ -248,9 +248,11 @@ class AnimesFixtures extends Fixture
         $manager->persist($Collection2);
         
         $Article1 = new News;
+        $Date1 = new \DateTime('now');
         $Article1->setUser($User1);
         $Article1->setTitle("Bienvenue sur mon site");
         $Article1->setContent("Mon site est en cours de construction");
+        $Article1->setDate($Date1);
     
         $manager->persist($Article1);
 

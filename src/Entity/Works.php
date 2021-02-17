@@ -45,7 +45,7 @@ class Works
     private $Abstract;
 
     /**
-     * @ORM\ManyToMany(targetEntity=collectionfavoris::class, inversedBy="works")
+     * @ORM\ManyToMany(targetEntity=CollectionFavoris::class, inversedBy="works")
      */
     private $collectionfavoris;
 

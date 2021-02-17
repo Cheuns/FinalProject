@@ -18,7 +18,7 @@ class Mangas
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=works::class, inversedBy="mangas")
+     * @ORM\ManyToOne(targetEntity=Works::class, inversedBy="mangas")
      * @ORM\JoinColumn(nullable=false)
      */
     private $works;
