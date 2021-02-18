@@ -23,7 +23,7 @@ class Animes
      * @ORM\ManyToOne(targetEntity=Works::class, inversedBy="animes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $Works;
+    private $works;
 
     /**
      * @ORM\Column(type="string", length=255)

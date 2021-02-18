@@ -13,4 +13,11 @@
             <button class="btn btn-lg btn-primary" type="delete">Supprimer</button>
     {% endfor %}
 
+    <h1>Voici vos collections :</h1>
+    
+    {% for item in collection %}
+        <p>{{ item.name }}</p>
+        <a href="{{ path('collection', {id: item.id}) }}">Collection</a>
+    {% endfor %}
+    
 {% endblock %}

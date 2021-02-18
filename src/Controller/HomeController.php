@@ -79,12 +79,23 @@ class HomeController extends AbstractController
         $mangas = $this->getDoctrine()
         ->getRepository(Mangas::class)
         ->find($id);
-        dump($mangas);
 
-        return $this->render('mangas/mangas_id.html.twig', [
-            'controller_name' => 'HomeController',
-            'mangas' => $mangas
-        ]);
+        $user = $this->getUser();
+
+        if(is_null($user)) {
+            return $this->render('mangas/mangas_id.html.twig', [
+                'mangas' => $mangas,
+                'user' => $user,
+            ]);
+        }else{
+            $collection = $user->getCollectionFavoris();
+
+            return $this->render('mangas/mangas_id.html.twig', [
+                'mangas' => $mangas,
+                'collection' => $collection,
+                'user' => $user,
+            ]);
+        }
     }
 
     /**
@@ -167,36 +178,6 @@ class HomeController extends AbstractController
     public function apropos(): Response
     {
         return $this->render('apropos/apropos.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
-
-    /**
-    * @Route("/user", name="user")
-    */
-    public function user(): Response
-    {
-        $works = $this->getDoctrine()
-        ->getRepository(Works::class)
-        ->findAll();
-        dump($works);
-
-        return $this->render('user/user.html.twig', [
-            'controller_name' => 'HomeController',
-            'works' => $works
-        ]);
-    }
-    
-    public function delete(int $id): Response
-    {
-        $works = $this->getDoctrine()->getRepository(Works::class)->find($id);
-
-        $entityManager = $this->getDoctrine()->getManager();
-
-        $entityManager->remove($works);
-        $entityManager->flush();
-
-        return $this->render('user/user.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }
