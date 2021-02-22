@@ -45,11 +45,6 @@ class Works
     private $Abstract;
 
     /**
-     * @ORM\ManyToMany(targetEntity=CollectionFavoris::class, inversedBy="works")
-     */
-    private $collectionfavoris;
-
-    /**
      * @ORM\OneToMany(targetEntity=Mangas::class, mappedBy="works", orphanRemoval=true)
      */
     private $mangas;
@@ -59,10 +54,14 @@ class Works
      */
     private $animes;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pictures;
+
     public function __construct()
     {
         $this->works = new ArrayCollection();
-        $this->collectionfavoris = new ArrayCollection();
         $this->mangas = new ArrayCollection();
         $this->animes = new ArrayCollection();
     }
@@ -133,30 +132,6 @@ class Works
     }
 
     /**
-     * @return Collection|collectionfavoris[]
-     */
-    public function getCollectionfavoris(): Collection
-    {
-        return $this->collectionfavoris;
-    }
-
-    public function addCollectionfavori(collectionfavoris $collectionfavori): self
-    {
-        if (!$this->collectionfavoris->contains($collectionfavori)) {
-            $this->collectionfavoris[] = $collectionfavori;
-        }
-
-        return $this;
-    }
-
-    public function removeCollectionfavori(collectionfavoris $collectionfavori): self
-    {
-        $this->collectionfavoris->removeElement($collectionfavori);
-
-        return $this;
-    }
-
-    /**
      * @return Collection|Mangas[]
      */
     public function getMangas(): Collection
@@ -212,6 +187,18 @@ class Works
                 $anime->setWorks(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPictures(): ?string
+    {
+        return $this->pictures;
+    }
+
+    public function setPictures(string $pictures): self
+    {
+        $this->pictures = $pictures;
 
         return $this;
     }

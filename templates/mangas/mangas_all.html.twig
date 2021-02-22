@@ -2,5 +2,6 @@
 <h1>Voici la liste de tous les mangas : 
     {% for item in mangas %}
             <li>{{ item.books }}</li>
+            <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "400px" width="300px">
     {% endfor %}
 </h1>

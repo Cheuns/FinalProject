@@ -2,5 +2,6 @@
 <h1>Voici la liste de tous les animes : 
     {% for item in animes %}
             <li>{{ item.title }}</li>
+            <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "400px" width="300px">
     {% endfor %}
 </h1>

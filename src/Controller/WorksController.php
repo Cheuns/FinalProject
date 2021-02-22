@@ -19,14 +19,12 @@ class WorksController extends AbstractController
     */
     public function index(): Response
     {
-
         $works = $this->getDoctrine()
         ->getRepository(Works::class)
         ->findAll();
         dump($works);
 
         return $this->render('works/works.html.twig', [
-            'controller_name' => 'WorksController',
             'works' => $works,
         ]);
     }
@@ -38,21 +36,18 @@ class WorksController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $id = $this->getDoctrine()
+        $works = $this->getDoctrine()
         ->getRepository(Works::class)
         ->find($id);
 
-        $liste = $this->getUser()->getCollectionFavoris();
-        
-        foreach($liste as $collec){
-            if($collec->getName() === $collection){
-                
-                $id->addCollectionfavori($collec);
-                $entityManager->persist($collec);
-                $entityManager->flush();
-            }
-        }
+        $collection = $this->getDoctrine()
+        ->getRepository(CollectionFavoris::class)
+        ->findOneBy(['name'=> $collection]);
 
-        return $this->redirectToRoute('mangasAll');
+        $collection->addRelationWork($works);   
+        $entityManager->persist($collection);
+        $entityManager->flush();
+    
+        return $this->redirectToRoute('home');
     }
 }

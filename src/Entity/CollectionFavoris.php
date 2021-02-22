@@ -29,9 +29,14 @@ class CollectionFavoris
      */
     private $name;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Works::class)
+     */
+    private $relationWorks;
+
     public function __construct()
     {
-        $this->works = new ArrayCollection();
+        $this->relationWorks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -59,6 +64,30 @@ class CollectionFavoris
     public function setName(?string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Works[]
+     */
+    public function getRelationWorks(): Collection
+    {
+        return $this->relationWorks;
+    }
+
+    public function addRelationWork(Works $relationWork): self
+    {
+        if (!$this->relationWorks->contains($relationWork)) {
+            $this->relationWorks[] = $relationWork;
+        }
+
+        return $this;
+    }
+
+    public function removeRelationWork(Works $relationWork): self
+    {
+        $this->relationWorks->removeElement($relationWork);
 
         return $this;
     }

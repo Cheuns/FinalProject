@@ -43,6 +43,11 @@ class Mangas
      */
     private $releasedate;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pictures;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +109,18 @@ class Mangas
     public function setReleasedate(\DateTimeInterface $releasedate): self
     {
         $this->releasedate = $releasedate;
+
+        return $this;
+    }
+
+    public function getPictures(): ?string
+    {
+        return $this->pictures;
+    }
+
+    public function setPictures(string $pictures): self
+    {
+        $this->pictures = $pictures;
 
         return $this;
     }

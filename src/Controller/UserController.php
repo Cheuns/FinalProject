@@ -37,14 +37,18 @@ class UserController extends AbstractController
     /**
      * @Route("/user/collection/{id}", name="collection")
     */
-    public function collection(): Response
+    public function collection($id): Response
     {
+        $collec = $this->getDoctrine()
+        ->getRepository(CollectionFavoris::class)
+        ->find($id);
+
         $user = $this->getUser();
-        $collection = $user->getCollectionFavoris();
-        
+        $works = $collec->getRelationWorks();
+
         return $this->render('user/collection.html.twig', [
+            'works' => $works, 
             'user' => $user, 
-            'collection' => $collection, 
         ]);
     }
 }

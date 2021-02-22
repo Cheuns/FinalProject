@@ -65,6 +65,11 @@ class Animes
      */
     private $seasons;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pictures;
+
     public function __construct()
     {
         $this->seasons = new ArrayCollection();
@@ -197,6 +202,18 @@ class Animes
                 $season->setAnimes(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPictures(): ?string
+    {
+        return $this->pictures;
+    }
+
+    public function setPictures(string $pictures): self
+    {
+        $this->pictures = $pictures;
 
         return $this;
     }
