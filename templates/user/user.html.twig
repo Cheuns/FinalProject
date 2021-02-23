@@ -1,0 +1,17 @@
+{# templates/user/user.html.twig #}
+{% extends 'base.html.twig'%}
+
+{% block body %}
+    <p>Bienvenue sur ton profil {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a></p>
+
+    <h1>Voici la liste de toutes nos oeuvres :</h1> 
+        <a href="{{ path('works') }}">Ajout Oeuvres</a>
+
+    <h1>Voici vos collections :</h1>
+    
+    {% for item in collection %}
+        <p>{{ item.name }}</p>
+        <a href="{{ path('collection', {id: item.id}) }}">Collection</a>
+    {% endfor %}
+    
+{% endblock %}

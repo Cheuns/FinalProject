@@ -20,18 +20,23 @@ class CollectionFavoris
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="collectionFavoris")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="collectionFavoris")
      */
     private $user;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $Name;
+    private $name;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Works::class)
+     */
+    private $relationWorks;
 
     public function __construct()
     {
-        $this->works = new ArrayCollection();
+        $this->relationWorks = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -53,12 +58,36 @@ class CollectionFavoris
 
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->name;
     }
 
-    public function setName(?string $Name): self
+    public function setName(?string $name): self
     {
-        $this->Name = $Name;
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Works[]
+     */
+    public function getRelationWorks(): Collection
+    {
+        return $this->relationWorks;
+    }
+
+    public function addRelationWork(Works $relationWork): self
+    {
+        if (!$this->relationWorks->contains($relationWork)) {
+            $this->relationWorks[] = $relationWork;
+        }
+
+        return $this;
+    }
+
+    public function removeRelationWork(Works $relationWork): self
+    {
+        $this->relationWorks->removeElement($relationWork);
 
         return $this;
     }

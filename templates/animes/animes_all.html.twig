@@ -1,0 +1,8 @@
+{# templates/animes/animes_all.html.twig #}
+<h1>Voici la liste de tous les animes : 
+    {% for item in animes %}
+            <li>{{ item.title }}</li>
+            <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "400px" width="300px">
+            <a href="{{ path('animesId', {id: item.id}) }}">Fiche descriptive</a>
+    {% endfor %}
+</h1>

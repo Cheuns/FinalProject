@@ -1,0 +1,68 @@
+{# templates/home/index.html.twig #}
+{% extends 'base.html.twig'%}
+
+{% block tilte %}Accueil{% endblock %}
+
+{% block body %}
+
+<div class="jumbotron jumbotron-fluid" style="background: #56d52a;">
+    {% if app.user %}
+        <div class="mb-3">
+            Tu es connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+    
+    <div class="container">
+        <h1>Bienvenue sur MyAnimeProject</h1>
+        <p>Une application spécialisée dans l'animation japonaise</p>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <a href="{{ path('animesAll') }}">Animes</a>
+                <a href="{{ path('mangasAll') }}">Mangas</a>
+                <a href="{{ path('articlesAll') }}">Articles</a>
+                <a href="{{ path('contact') }}">Contact</a>
+                <a href="{{ path('apropos') }}">À propos</a>
+                <a href="{{ path('user') }}">Espace utilisateur</a>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<style>
+.navbar {
+    background-color: #A92AD5; 
+    border-color: #A92AD5;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color : white;
+}
+
+h1 {
+    font-family: "https://fonts.google.com/specimen/Cabin?preview.size=61&preview.text=This%20is%20the%20Title&preview.text_type=custom&sidebar.open=true";
+    font-size: 40px;
+    color: black;
+}
+
+h2 {
+    font-family: " https://fonts.google.com/specimen/Averia+Gruesa+Libre#standard-styles";
+    font-size: 30px;
+    color: black;
+}
+
+p {
+    font-family: "https://fonts.google.com/specimen/Baloo+Tamma+2?preview.size=14&selection.family=Baloo+Tamma+2";
+    font-size: 20px;
+    color: black;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+</style>
+
+{% endblock %}
