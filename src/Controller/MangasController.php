@@ -34,7 +34,7 @@ class MangasController extends AbstractController
         ->find($id);
         dump($mangas);
 
-        return $this->render('animes/mangas_id.html.twig', [
+        return $this->render('mangas/mangas_id.html.twig', [
             'mangas' => $mangas
         ]);
     }

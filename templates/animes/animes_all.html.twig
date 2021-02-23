@@ -3,5 +3,6 @@
     {% for item in animes %}
             <li>{{ item.title }}</li>
             <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "400px" width="300px">
+            <a href="{{ path('animesId', {id: item.id}) }}">Fiche descriptive</a>
     {% endfor %}
 </h1>

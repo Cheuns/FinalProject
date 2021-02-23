@@ -4,12 +4,8 @@
 {% block body %}
     <p>Bienvenue sur ton profil {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a></p>
 
-    <p>Tu souhaites ajouter ou supprimer des oeuvres à ton profil ?</p>
-
     <h1>Voici la liste de toutes nos oeuvres :</h1> 
-    {% for item in works %}
-            <li>{{ item.title }}</li>
-    {% endfor %}
+        <a href="{{ path('works') }}">Ajout Oeuvres</a>
 
     <h1>Voici vos collections :</h1>
     

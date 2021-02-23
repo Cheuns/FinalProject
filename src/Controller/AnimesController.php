@@ -18,9 +18,9 @@ class AnimesController extends AbstractController
         ->getRepository(Animes::class)
         ->findAll();
         dump($animes);
-
+        
         return $this->render('animes/animes_all.html.twig', [
-            'animes' => $animes
+            'animes' => $animes,
         ]);
     }
 

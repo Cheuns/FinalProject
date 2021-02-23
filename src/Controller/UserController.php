@@ -11,10 +11,12 @@ use App\Entity\CollectionFavoris;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class UserController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/user", name="user")
     */
     public function user(): Response
@@ -26,7 +28,7 @@ class UserController extends AbstractController
 
         $user = $this->getUser();
         $collection = $user->getCollectionFavoris();
-
+    
         return $this->render('user/user.html.twig', [
             'works' => $works, 
             'user' => $user, 
@@ -35,6 +37,7 @@ class UserController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/user/collection/{id}", name="collection")
     */
     public function collection($id): Response

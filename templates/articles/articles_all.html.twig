@@ -1,8 +1,8 @@
 {# templates/articles/articles_all.html.twig #}
 <h1>Voici la liste de tous les articles : 
     {% for item in news %}
-            <li>{{ item.title }}</li></br>
-            <li>{{ item.content }}</li></br>
-            <li>{{ item.date }}</li></br>
+            <h1>{{ item.title }}</h1></br>
+            <p>Publié le {{item.date|date('d/m/Y à h:i')}} </p>
+            <p>{{ item.content|raw }}</p></br>
     {% endfor %}
 </h1>
