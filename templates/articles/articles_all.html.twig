@@ -1,0 +1,11 @@
+{# templates/articles/articles_all.html.twig #}
+{% extends 'base.html.twig'%}
+{% block body %}
+<h1>Voici la liste de tous les articles : 
+    {% for item in news %}
+            <h1>{{ item.title }}</h1></br>
+            <p>Publié le {{item.date|date('d/m/Y à h:i')}} </p>
+            <p>{{ item.content|raw }}</p></br>
+    {% endfor %}
+</h1>
+{% endblock %}

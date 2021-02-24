@@ -1,0 +1,10 @@
+{# templates/animes/animes_id.html.twig #}
+{% extends 'base.html.twig'%}
+{% block body %}
+<h1>Vous avez recherché un anime par son ID et vous êtes tombé sur :</h1>
+    <h2>{{ animes.title }}</h2>
+    <p>Nombres d'épisodes : {{ animes.episodes }}</p>
+    <p>Résumé : {{ animes.abstract }}</p>
+    <p>Studio d'animation : {{ animes.studio }}</p>
+    <p>Disponible chez : {{ animes.broadcast }}</p>
+{% endblock %}

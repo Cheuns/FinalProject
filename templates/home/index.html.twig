@@ -1,0 +1,56 @@
+{# templates/home/index.html.twig #}
+{% extends 'base.html.twig'%}
+
+{% block tilte %}Accueil{% endblock %}
+
+{% block body %}
+    
+    <h1 id="titre_home">Les animes de saison 2021</h1>
+        
+        <div class="row"> 
+            <!-- Printemps -->
+            <div class="col-12 col-lg-3">
+                <h2>Printemps</h2>
+                <img class = "img_home" src = "{{ asset('pictures/my_hero_academia.jpg') }}" alt="My Hero Academia - Saison 5">
+                <p>My Hero Academia - Saison 5</p> 
+                <img class = "img_home" src = "{{ asset('pictures/dragon_ie_wo_kau.jpg') }}" alt="Dragon, Ie wo Kau">
+                <p>Dragon, Ie wo Kau</p>
+                <img class = "img_home" src = "{{ asset('pictures/nomad_megalo_box_2.jpg') }}" alt="Megalo Box - Saison 2"> 
+                <p>Megalo Box - Saison 2</p>
+            </div>
+        
+            <!-- Été -->
+            <div class="col-12 col-lg-3">
+                <h2>Été</h2>
+                <img class = "img_home" src = "{{ asset('pictures/mkdm.jpg') }}" alt="Miss Kobayashi's Dragon Maid - Saison 5">
+                <p>Miss Kobayashi's Dragon Maid - Saison 5</p>
+                <img class = "img_home" src = "{{ asset('pictures/slime_s2.jpg') }}" alt="Tensei Shitara Slime Datta Ken 2nd Season Part 2">
+                <p>Tensei Shitara Slime Datta Ken 2nd Season Part 2</p>
+                <img class = "img_home" src = "{{ asset('pictures/getter_robo_ark.jpg') }}" alt="Getter Robo Arc">
+                <p>Getter Robo Arc</p>
+            </div>
+      
+            <!-- Automne -->
+            <div class="col-12 col-lg-3">
+                <h2>Automne</h2>
+                <img class = "img_home" src = "{{ asset('pictures/osama_ranking.jpg') }}" alt="Ōsama Ranking">
+                <p>Ōsama Ranking</p>
+                <img class = "img_home" src = "{{ asset('pictures/platinum_end.jpg') }}" alt="Platinum End">
+                <p>Platinum End</p>
+                <img class = "img_home" src = "{{ asset('pictures/josee_to_tora_to_sakana-tachi.jpg') }}" alt="Josee to Tora to Sakana-tachi">
+                <p>Josee to Tora to Sakana-tachi </p>
+            </div>
+
+            <!-- Hiver -->
+            <div class="col-12 col-lg-3">
+                <h2>Hiver</h2>
+                <img class = "img_home" src = "{{ asset('pictures/beastars.jpg') }}" alt="Beastars - Saison 2">
+                <p>Beastars - Saison 2</p>
+                <img class = "img_home" src = "{{ asset('pictures/entotsu-chou_no_poupelle.jpg') }}" alt="Entotsu-chou no Poupelle">
+                <p>Entotsu-chou no Poupelle</p>
+                <img class = "img_home" src = "{{ asset('pictures/muv-luv_alternative_the_animation.jpg') }}" alt="Muv-Luv Alternative The Animation">
+                <p>Muv-Luv Alternative The Animation</p>
+            </div>
+        </div>
+
+{% endblock %}

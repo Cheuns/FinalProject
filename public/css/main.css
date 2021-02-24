@@ -1,0 +1,48 @@
+.navbar {
+    background-color: #A92AD5; 
+    border-color: #A92AD5;
+}
+
+.jumbotron {
+    background-color: #56d52a;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color : red;
+}
+
+h1 {
+    font-family: "https://fonts.google.com/specimen/Cabin?preview.size=61&preview.text=This%20is%20the%20Title&preview.text_type=custom&sidebar.open=true";
+    font-size: 40px;
+    color: black;
+}
+
+h2 {
+    font-family: " https://fonts.google.com/specimen/Averia+Gruesa+Libre#standard-styles";
+    font-size: 30px;
+    color: black;
+}
+
+p {
+    font-family: "https://fonts.google.com/specimen/Baloo+Tamma+2?preview.size=14&selection.family=Baloo+Tamma+2";
+    font-size: 20px;
+    color: black;
+}
+
+.footer {
+    background-color: #56d52a;
+}
+
+.img_home {
+    width: 250px;
+    height: 350px;
+}
+
+#titre_home {
+    display: flex;
+    justify-content: center;
+}

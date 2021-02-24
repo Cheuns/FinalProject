@@ -18,7 +18,7 @@ class Seasons
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=animes::class, inversedBy="seasons")
+     * @ORM\ManyToOne(targetEntity=Animes::class, inversedBy="seasons")
      * @ORM\JoinColumn(nullable=false)
      */
     private $animes;

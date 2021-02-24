@@ -1,0 +1,9 @@
+{# templates/mangas/mangas_id.html.twig #}
+{% extends 'base.html.twig'%}
+{% block body %}
+<h1>Vous avez recherché un mangas par son ID et vous êtes tombé sur :</h1>
+    <h2>{{ mangas.books }}</h2>
+    <p>Résumé : {{ mangas.abstract }}</p>
+    <p>Editeur : {{ mangas.editor }}</p>
+    <p>Date de parution : {{ mangas.releasedate|date('d/m/Y') }}</p>
+{% endblock %}

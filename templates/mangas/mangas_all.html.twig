@@ -1,0 +1,12 @@
+{# templates/mangas/mangas_all.html.twig #}
+{% extends 'base.html.twig'%}
+
+{% block body %}
+<h1>Voici la liste de tous les mangas : 
+    {% for item in mangas %}
+            <li>{{ item.books }}</li>
+            <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "400px" width="300px">
+            <a href="{{ path('mangasId', {id: item.id}) }}">Fiche descriptive</a>
+    {% endfor %}
+</h1>
+{% endblock %}

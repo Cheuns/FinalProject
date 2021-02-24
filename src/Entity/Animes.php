@@ -20,7 +20,7 @@ class Animes
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=works::class, inversedBy="animes")
+     * @ORM\ManyToOne(targetEntity=Works::class, inversedBy="animes")
      * @ORM\JoinColumn(nullable=false)
      */
     private $works;
@@ -64,6 +64,11 @@ class Animes
      * @ORM\OneToMany(targetEntity=Seasons::class, mappedBy="animes")
      */
     private $seasons;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pictures;
 
     public function __construct()
     {
@@ -197,6 +202,18 @@ class Animes
                 $season->setAnimes(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPictures(): ?string
+    {
+        return $this->pictures;
+    }
+
+    public function setPictures(string $pictures): self
+    {
+        $this->pictures = $pictures;
 
         return $this;
     }
