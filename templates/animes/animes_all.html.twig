@@ -1,10 +1,19 @@
 {# templates/animes/animes_all.html.twig #}
 {% extends 'base.html.twig'%}
+
 {% block body %}
-<h1>Voici la liste de tous les animes :</h1>
-    {% for item in animes %}
-            <li>{{ item.title }}</li>
-            <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "400px" width="300px">
-            <a href="{{ path('animesId', {id: item.id}) }}">Fiche descriptive</a>
-    {% endfor %}
+<body>
+    <h1 id ="titre_animes">Voici la liste de tous les animes</h1>
+    </br>
+    
+        <div class="row"> 
+        {% for item in animes %}
+                <div class="col-12 col-lg-3">
+                    <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "350px" width="250px">
+                    <a class ="btn btn-primary" href="{{ path('animesId', {id: item.id}) }}" role="button">Fiche descriptive</a>
+                    <p>{{ item.title }}</p>
+                </div>
+        {% endfor %}
+        </div>
+</body>
 {% endblock %}

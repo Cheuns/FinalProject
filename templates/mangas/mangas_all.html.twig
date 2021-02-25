@@ -2,11 +2,18 @@
 {% extends 'base.html.twig'%}
 
 {% block body %}
-<h1>Voici la liste de tous les mangas : 
-    {% for item in mangas %}
-            <li>{{ item.books }}</li>
-            <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "400px" width="300px">
-            <a href="{{ path('mangasId', {id: item.id}) }}">Fiche descriptive</a>
-    {% endfor %}
-</h1>
+<body>
+    <h1 id ="titre_mangas">Voici la liste de tous les mangas</h1> 
+    </br>
+
+        <div class="row"> 
+            {% for item in mangas %}
+                <div class="col-12 col-lg-3">
+                    <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "350px" width="250px">
+                    <a class ="btn btn-primary" href="{{ path('mangasId', {id: item.id}) }}" role="button">Fiche descriptive</a>
+                    <p>{{ item.books }}</p>
+                </div>
+            {% endfor %}
+        </div>
+</body>
 {% endblock %}

@@ -33,7 +33,25 @@ p {
     color: black;
 }
 
+html, body {
+    height: 100%;
+	margin: 0; 
+    padding: 0;
+}
+
+body
+{
+    display : table;
+	width: 100%;
+
+    background-image: url("../pictures/papier.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .footer {
+    display : table-row;
+    height: 30px;
     background-color: #56d52a;
 }
 
@@ -45,4 +63,58 @@ p {
 #titre_home {
     display: flex;
     justify-content: center;
+}
+
+#titre_animes {
+    display: flex;
+    justify-content: center;
+}
+
+.img_animes {
+    float: left;
+}
+
+.description {
+    padding-left: 280px;
+}
+
+.p_animes {
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #A92AD5;
+}
+
+.btn:hover {
+    background-color: #56d52a;
+}
+
+#titre_mangas {
+    display: flex;
+    justify-content: center;
+}
+
+#article {
+    font-style: italic;
+}
+
+.contact-form{
+    background:rgba(0,0,0, .6);
+    color:white;
+    margin-top: 100px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 3px grey;
+}
+
+#titre_contact {
+    color: white;
+}
+
+.contact {
+    color: white;
+}
+
+hr{
+    background: white;	
 }

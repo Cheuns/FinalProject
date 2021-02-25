@@ -48,6 +48,6 @@ class WorksController extends AbstractController
         $entityManager->persist($collection);
         $entityManager->flush();
     
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('user');
     }
 }

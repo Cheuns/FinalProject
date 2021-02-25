@@ -1,10 +1,16 @@
 {# templates/animes/animes_id.html.twig #}
 {% extends 'base.html.twig'%}
 {% block body %}
-<h1>Vous avez recherché un anime par son ID et vous êtes tombé sur :</h1>
+<body>
     <h2>{{ animes.title }}</h2>
-    <p>Nombres d'épisodes : {{ animes.episodes }}</p>
-    <p>Résumé : {{ animes.abstract }}</p>
-    <p>Studio d'animation : {{ animes.studio }}</p>
-    <p>Disponible chez : {{ animes.broadcast }}</p>
+    <div class="img_animes">
+        <img src ="{{ asset('pictures/'~ animes.pictures ~'') }}" height = "350px" width="250px">
+    </div>
+    <div class="description">
+        <p class = "p_animes">Nombres d'épisodes :</p> <p>{{ animes.episodes }}</p>
+        <p class = "p_animes">Résumé :</p> <p>{{ animes.abstract }}</p>
+        <p class = "p_animes">Studio d'animation :</p> <p>{{ animes.studio }}</p>
+        <p class = "p_animes">Disponible chez :</p> <p>{{ animes.broadcast }}</p>
+    </div>
+</body>
 {% endblock %}

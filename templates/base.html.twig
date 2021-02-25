@@ -15,6 +15,15 @@
         <div class="mb-3">
             Tu es connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
+   
+    {% else %}				
+							<li class="nav-item">
+								<a class="nav-link" href="/login">Se connecter</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/register">S'inscrire</a>
+							</li>
+   
     {% endif %}
     
     <div class="container">
@@ -39,6 +48,7 @@
         {% block body %}{% endblock %}
     </body>
 
+ 
     <div class= "footer">
         <div class="container">
           <div class="row">
@@ -51,6 +61,7 @@
           </div>
         </div>
       </div>
+
 </html>
 
   

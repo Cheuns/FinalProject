@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<p>Voici la liste de toutes les oeuvres : 
-    {% for a in works %}
-        <li>{{ a.title }}</li>
-        <img src ="{{ asset('pictures/'~ a.pictures ~'') }}" height = "400px" width="300px">
-        {% for b in app.user.collectionFavoris %}
-            <a href="{{ path('addmangas', {"id" : a.id, "collection" : b.name }) }}">{{b.name}}</a>
+<body>
+    <p>Voici la liste de toutes les oeuvres : 
+        {% for a in works %}
+            <li>{{ a.title }}</li>
+            <img src ="{{ asset('pictures/'~ a.pictures ~'') }}" height = "400px" width="300px">
+            {% for b in app.user.collectionFavoris %}
+                <a href="{{ path('addmangas', {"id" : a.id, "collection" : b.name }) }}">{{b.name}}</a>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
-</p>
+    </p>
+</body>
 {% endblock %}
