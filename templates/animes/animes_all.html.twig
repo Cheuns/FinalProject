@@ -7,13 +7,13 @@
     </br>
     
         <div class="row"> 
-        {% for item in animes %}
-                <div class="col-12 col-lg-3">
-                    <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "350px" width="250px">
-                    <a class ="btn btn-primary" href="{{ path('animesId', {id: item.id}) }}" role="button">Fiche descriptive</a>
-                    <p>{{ item.title }}</p>
-                </div>
-        {% endfor %}
+            {% for item in animes %}
+                    <div class="col-12 col-lg-3">
+                        <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "350px" width="250px">
+                        <a class ="btn btn-primary" href="{{ path('animesId', {id: item.id}) }}" role="button">Fiche descriptive</a>
+                        <p>{{ item.title }}</p>
+                    </div>
+            {% endfor %}
         </div>
 </body>
 {% endblock %}

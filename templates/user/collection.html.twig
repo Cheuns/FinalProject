@@ -1,0 +1,17 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+
+<p>Bienvenue sur ton profil {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a></p>
+<h1>Bienvenue sur votre collection</h1>
+
+    <div class="row"> 
+        {% for item in works %}
+            <div class="col-12 col-lg-3">
+                <img src ="{{ asset('pictures/'~ item.pictures ~'') }}" height = "350px" width="250px">            
+                <p>{{ item.title }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

@@ -2,14 +2,18 @@
 
 {% block body %}
 <body>
-    <p>Voici la liste de toutes les oeuvres : 
-        {% for a in works %}
-            <li>{{ a.title }}</li>
-            <img src ="{{ asset('pictures/'~ a.pictures ~'') }}" height = "400px" width="300px">
-            {% for b in app.user.collectionFavoris %}
-                <a href="{{ path('addmangas', {"id" : a.id, "collection" : b.name }) }}">{{b.name}}</a>
+    <h1>Voici la liste de toutes les oeuvres :</h1> 
+        <div class="row"> 
+            {% for a in works %}
+                <div class="col-12 col-lg-3">
+                    <li>{{ a.title }}</li>
+                    <img src ="{{ asset('pictures/'~ a.pictures ~'') }}" height = "350px" width="250px">
+                
+                {% for b in app.user.collectionFavoris %}
+                     <a class ="btn btn-primary" href="{{ path('addmangas', {"id" : a.id, "collection" : b.name }) }}" role="button">{{b.name}}</a>
+                </div>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-    </p>
+        </div>
 </body>
 {% endblock %}
