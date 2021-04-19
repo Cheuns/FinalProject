@@ -95,6 +95,11 @@ body
     justify-content: center;
 }
 
+#titre_oeuvres {
+    display: flex;
+    justify-content: center;
+}
+
 #article {
     font-style: italic;
 }

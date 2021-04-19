@@ -36,15 +36,15 @@ class WorksController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $works = $this->getDoctrine()
+        $works = $this->getDoctrine() //Je récupère mon entité oeuvres
         ->getRepository(Works::class)
         ->find($id);
 
-        $collection = $this->getDoctrine()
+        $collection = $this->getDoctrine()  //Je récupère mon entité collection
         ->getRepository(CollectionFavoris::class)
         ->findOneBy(['name'=> $collection]);
 
-        $collection->addRelationWork($works);   
+        $collection->addRelationWork($works);  //Méthode pour ajouter une oeuvre à ma collection
         $entityManager->persist($collection);
         $entityManager->flush();
     
